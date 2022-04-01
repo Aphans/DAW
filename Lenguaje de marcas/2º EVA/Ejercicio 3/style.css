@@ -1,0 +1,40 @@
+#b1 {
+border: 1px;
+border-color: blue;
+border-style: solid;
+}
+#b2{
+border: 1px;
+border-color: blue;
+border-style: solid;
+}
+#b3{
+border: 1px;
+border-color: blue;
+border-style: solid;
+}
+#b4{
+color: cadetblue;
+border: 1px;
+border-color: blue;
+border-style: solid;
+}
+#p1{
+color:green
+}
+#p2{
+    color: brown;
+}
+#p3{
+    color:green
+}
+em{
+font-style: italic;
+background-color: rgb(252, 252, 184);
+color:blue;
+}
+#em2{
+    font-style: italic;
+    background-color: black;
+    color:yellow
+}

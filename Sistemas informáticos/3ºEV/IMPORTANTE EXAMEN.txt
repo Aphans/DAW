@@ -1,0 +1,44 @@
+/*-----------------------------------------------------------------SOLO SE PUEDE CON ROOT---------------------------------------------------------*/
+
+--Crear usuarios en linux
+useradd //adduser diferencia
+useradd está en todas las shells y no es interactivo y al crear el usuario aparece deshabilitado el usuario por defecto. Tienes que poner la contraseña tu a mano.
+Asignar contraseña #passswd usu
+adduser puede que no este en alguna shell es interactivo
+
+--Eliminar usuarios
+user del
+--Bloquear usuarios y desbloquear
+
+BLOQUEAR > usermod -L
+Si hacemos su usuario vemos que no podemos identificarnos porque este esta bloqueado
+DESBLOQUEAR > usermod -U
+
+
+--Crear grupos
+addgroup//grupoadd
+--Ver grupos de un usuario
+groups usuario
+--Agregar grupos secundarios a un usuario --a para conservar los grupos
+usermod -aG grupo usuario
+--Cambiar el grupo principal de un usuario sin perder los secundarios
+usermod -g grupoPrincipal usuario -G grupos para no perder
+
+--Ver usuarios
+cat /etc/passwd
+cat /etc/shadow
+
+--Comando Chown
+
+--Capas OSI
+--Protocolos
+
+Si tienes 14 equipos necesitas 13 tarjetas de red si quieres conectar mediante una malla o anillado usando cableado cruzado
+
+MODELO OSI	
+Nivel red capa 3
+Nivel enlace capa 2
+
+siwtch macadress capa 2
+
+--DMZ 

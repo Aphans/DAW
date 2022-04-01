@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guarderia xmlns:xsi="http://www.w3.d/2001/xd"
+ xsi:noNamespaceSchemaLocation="guarderia.xsd">
+<niño numeroExpediente="3333">
+    <nombre>Pepe</nombre>
+    <fechaNacimiento>2002-09-24</fechaNacimiento>
+    <peso>3.3</peso>
+    <altura>2</altura>
+    <vacunas>true</vacunas>
+</niño>
+</guarderia>

@@ -1,0 +1,18 @@
+Qué es un sistema de ficheros?
+------------------------------
+
+La estructura y los métodos que permiten gestionar la información en forma de archivos
+
+Información sobre ntfs y ext4
+-----------------------------
+
+
+*NTFS*
+
+Está incluido en las versionas de Windows 2000, Windows XP, Windows Server 2003, Windows Server 2008, Window Vista, Windos 7 y Windows 8. El tamaño mínimo recomendado para las particiones de este tipo de sistemas de archivos es de 10 GB, siendo posibles tamaños mayores. Además, a diferencia de FAT32, distingue entre mayúsculas y minúsculas.
+
+*EXT4*
+
+Es una mejora compatible de ext3 que utiliza menos CPU y mejora la velocidad de lectura y escritura. Además, soporta volúmenes de hasta 1024 PiB (PebiByte) ( 1 PiB = 2^50 Bytes ). Como acabo de decir, mejora la velocidad de lectura y escritura en comparación con ext3, pero es más lento en la eliminación de archivos.
+
+En ext4 se introducen los exents, que se utilizan para reemplazar al tradicional esquema de bloques utilizado por ext2 y ext3. Los exents mejoran el rendimiento al trabajar con ficheros de gran tamaño.

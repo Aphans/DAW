@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE compras SYSTEM "tarea11.dtd">
+<compras>
+     <dvds>
+    <dvd>
+        <titulo>&titulo;</titulo>
+        <pais>España</pais>
+        <fecha_salida_mercado>
+        <día> 01 </día>
+        <mes> E</mes>
+        <año> 2006</año>
+        </fecha_salida_mercado>
+    </dvd>
+    <dvd>
+        <titulo>&titulo2;</titulo>
+        <pais>EEUU</pais>
+        <actor rol = "protagonista"> Arnold S.</actor>
+        <fecha_salida_mercado>
+        <día> 01 </día>
+        <mes> M</mes>
+        <año> 1992</año>
+        </fecha_salida_mercado>
+    </dvd>
+ </dvds>
+ <cintas>
+    <cinta>
+       <titulo>&titulo3;</titulo>
+       <formato>VHS</formato>
+       <portada>https://portada_gladiator/fotaca.img</portada>
+       <fecha_salida_mercado>
+        <día> 01 </día>
+        <mes> NV</mes>
+        <año> 2000</año>
+        </fecha_salida_mercado>
+    </cinta>
+ </cintas>
+ </compras>

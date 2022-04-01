@@ -1,0 +1,13 @@
+p{
+    /*width: 200px;*/
+    height: 50px;
+    border:solid;
+    background-color: blue;
+}
+a{
+   /* width:500px;*/
+    height:200px;
+    border:dotted;
+    background-color: red;
+    
+}

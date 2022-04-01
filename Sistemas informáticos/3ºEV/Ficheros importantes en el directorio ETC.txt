@@ -1,0 +1,3 @@
+Directorio >etc
+>fichero pwd  contiene una linea por cada usuario creado en el sistema con la información relevante. Tiene
+>fichero shadow

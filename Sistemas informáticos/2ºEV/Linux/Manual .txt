@@ -1,0 +1,7 @@
+Manual
+
+comando -man
+
+Historial manual
+
+comando -history

@@ -1,0 +1,42 @@
+.importante{
+border: solid #e91e63 3px;
+border-radius:10px;
+background-color: antiquewhite;
+padding-left:70px;
+margin:30px auto;
+text-align: auto;
+width: 50%;
+    }
+.enlaces{
+border: solid 3px #607D8B;
+border-radius:10px;
+text-align:auto;
+background-color:antiquewhite;
+margin:30px auto;
+padding-left:70px;
+width: 60%;
+    }
+.recuerda{
+    border: solid 3px #03A9F4;
+    border-radius:10px;
+    background-color: antiquewhite;
+    margin:30px auto;
+    padding-left: 70px;
+    width: 70%;
+    text-align: auto;
+}
+#IMPORTANTE{
+    text-align: center;
+    color: red;
+}
+#INTERÉS{
+    text-align: center;
+    color:grey;
+}
+#recuerda{
+    text-align: center;
+    color:blue;
+}
+em{
+    color:blue;
+}

@@ -1,0 +1,23 @@
+div{
+    column-count: 3;
+    column-gap:5px;
+    column-rule:solid black;
+}
+h2{
+    text-align: center;
+}
+h1{
+    text-align:center;
+    color:gray;
+    text-shadow: black;
+}
+main{
+    width:50%;
+    background-color: white;
+    padding:10px;
+    font:12px;
+    text-align: center;
+}
+img{
+    margin:0 auto;
+}

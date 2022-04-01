@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instituto [
+  <!ELEMENT instituto ((ciclo | alumno)*)>
+  <!ELEMENT ciclo EMPTY>
+  <!ATTLIST ciclo 
+        codigo NMTOKEN #REQUIRED
+        nombre ID  #REQUIRED
+        grado (medio | superior) #IMPLIED>
+   <!ELEMENT alumno EMPTY>
+  <!ATTLIST alumno nombre CDATA #REQUIRED>
+  <!ATTLIST alumno ciclo IDREF #IMPLIED>
+]>
+
+<instituto>
+   <ciclo codigo="CSIFC01" nombre="ASIR" grado="superior"/>
+   <ciclo codigo="CSIFC02" nombre="DAM" />
+  <alumno nombre="Alejandro Maceda Barros" ciclo="ASIR" />
+  <alumno nombre="Mar Maceda Abel" ciclo="ASIR" />
+  <alumno nombre="Carolina Castiñeira Lamas" ciclo="DAM" />
+  <alumno nombre="Mauro Varela Vila" ciclo="DAM" />
+ </instituto>

@@ -1,0 +1,16 @@
+package Ejercicios;
+import java.util.Scanner;
+
+public class Ejercicio_27 {
+	public static void main(String[]Args) {
+		Scanner entrada = new Scanner (System.in);
+		int sueldo=0, contador=0;
+		System.out.println("Introduce el sueldo del empleado");
+		sueldo=entrada.nextInt();
+		do {
+		contador++;
+		entrada.close();
+		}while(sueldo>1000 && contador<10);
+		System.out.println("La cantidad de empleados con sueldos mayor a 1000 euros son:"+contador);
+			}
+	}

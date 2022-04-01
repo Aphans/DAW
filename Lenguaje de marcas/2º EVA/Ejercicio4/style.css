@@ -1,0 +1,15 @@
+#pcn{
+    background-color:lime;
+}
+#prgb{
+    background-color:rgb(127, 255, 0)
+}
+#phex{
+    background-color:#7FFF00;
+}
+#phsl{
+    background-color:hsl(90, 100%, 50%)
+}
+#prgba{
+    background-color: rgba(127, 255, 0, 0.5);
+}

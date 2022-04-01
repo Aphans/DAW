@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE compras[
+<!ELEMENT compras (dvds,cintas)>
+<!ELEMENT dvds (dvd+)>
+<!ELEMENT dvd (titulo,pais,fecha_salida_mercado,actor?)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ENTITY lista_fecha "día,año,mes">
+<!ELEMENT fecha_salida_mercado (%lista_fecha;)>
+<!ELEMENT día (#PCDATA)>
+<!ELEMENT  mes (L | F | M | A | MAY | JUN |JUL | AG | S | O | N | D)>
+<!ELEMENT año (#PCDATA)>
+<!ELEMENT actor (#PCDATA)>
+<!ATTLIST actor rol (protagonista |secundario) NMTOKEN #REQUIRED>
+<!ELEMENT cintas (cinta)>
+<!ELEMENT cinta (titulo,formato,portada,fecha_salida_mercado)>
+<!ELEMENT formato (#PCDATA)>
+<!ELEMENT portada (#PCDATA)>
+<!NOTATION E SYSTEM "Enero">
+<!NOTATION F SYSTEM "Febrero">
+<!NOTATION M SYSTEM "Marzo">
+<!NOTATION A SYSTEM "Abril">
+<!NOTATION MAY SYSTEM "Mayo">
+<!NOTATION JUN SYSTEM "Junio">
+<!NOTATION JUL SYSTEM "Julio">
+<!NOTATION AG SYSTEM "Agosto">
+<!NOTATION S SYSTEM "Septiembre">
+<!NOTATION O SYSTEM "Octubre">
+<!NOTATION N SYSTEM "Noviembre">
+<!NOTATION D SYSTEM "Diciembre">
+<!ENTITY titulo ="El oro de Moscú">
+<!ENTITY titulo2 = "Terminator">
+<!ENTITY titulo3 ="Gladiator">
+<!ENTITY % fecha_salida_mercado ("dia #PCDATA mes #PCDATA año #PCDTA")>
+]>

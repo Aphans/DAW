@@ -1,0 +1,48 @@
+
+<!--
+Realizar
+1) Generar DTD a partir de XML
+2) Generar entidad interna con los títulos de las obras y sustituir en XML
+3) Generar notación con los meses del años y sustituir en el XML
+4) Generar entidad de parámetro con la fecha de salida y sustituir en XML
+5) Generar entidad externa no analizable con el elemento portada y sustituir en XML
+
+-->
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE edificio SYSTEM "tarea6.dtd">
+<compras>
+     <dvds>
+    <dvd>
+        <titulo>El oro de Moscú</titulo>
+        <pais>España</pais>
+        <fecha_salida_mercado>
+        <día> 01 </día>
+        <mes> Enero</mes>
+        <año> 2006</año>
+        </fecha_salida_mercado>
+    </dvd>
+    <dvd>
+        <titulo>Terminator</titulo>
+        <pais>EEUU</pais>
+        <actor rol = "protagonista"> Arnold S.</actor>
+        <fecha_salida_mercado>
+        <día> 01 </día>
+        <mes> Marzo</mes>
+        <año> 1992</año>
+        </fecha_salida_mercado>
+    </dvd>
+ </dvds>
+ <cintas>
+    <cinta>
+       <titulo>Gladiator</titulo>
+       <formato>VHS</formato>
+       <portada>https://portada_gladiator/fotaca.img</portada>
+       <fecha_salida_mercado>
+        <día> 01 </día>
+        <mes> Noviembre</mes>
+        <año> 2000</año>
+        </fecha_salida_mercado>
+    </cinta>
+ </cintas>
+  </compras>

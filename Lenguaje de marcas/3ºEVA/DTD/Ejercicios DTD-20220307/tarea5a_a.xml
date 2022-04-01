@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE exames [
+  <!ELEMENT exames (examen*)>
+  <!ELEMENT examen EMPTY>
+  <!ATTLIST examen fecha CDATA #REQUIRED>
+  <!ATTLIST examen hora CDATA #REQUIRED>
+  <!ATTLIST examen materia CDATA #REQUIRED>  
+]>
+
+<exames>
+  <examen fecha="15/02/2012" hora="18:30" materia="Bases de datos"></examen>
+  <examen fecha="06/03/2012" hora="16:00" materia="XML"></examen>
+  <examen fecha="30/03/2012" hora="19:00" materia="Redes"></examen>
+</exames>

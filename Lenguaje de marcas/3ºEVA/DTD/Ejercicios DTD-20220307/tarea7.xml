@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE CentroSocial SYSTEM "tarea7.dtd">
+<CentroSocial>
+<reserva ubicacion="polideportivo" evento="Juegos">
+    <fecha mes="8" dia="2" horario="TARDE"></fecha>
+    <clienteEmpresa>
+        3303030
+    </clienteEmpresa>
+</reserva> 
+</CentroSocial>

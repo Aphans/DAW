@@ -1,0 +1,20 @@
+package Ejercicios;
+import java.util.Scanner;
+public class Ejercicio_51 {
+	public static void main(String[] args) {
+	    final int nMax = 2;
+	    int num=0,multi=0;
+	    int resultado =  0;
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Escribe números a multiplicar");
+		num =entrada.nextInt();
+	   multi = entrada.nextInt();
+		
+		for (int i = 1; i <= multi; i++) {
+			
+			resultado=resultado+num;
+			System.out.println(resultado);
+		}
+            	
+	}
+}

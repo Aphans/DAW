@@ -1,0 +1,3 @@
+Enlaces blandos y enlaces duros donde s epueden crear
+
+Solamente en el caso de los enlaces duros puede haber mismos numeros de inodos

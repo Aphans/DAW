@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:noNamespaceSchemaLocation="tarea2c.xsd">
+   <pagina>
+      <nombre>Abrirllave</nombre>
+      <descripcion>Tutoriales de informática.</descripcion>
+      <url>http://www.abrirllave.com/</url>
+   </pagina>
+   <pagina>
+      <nombre>Wikipedia</nombre>
+      <url>http://www.wikipedia.org/</url>
+   </pagina>
+   <pagina>
+      <nombre>W3C</nombre>
+      <url>http://www.w3.org/</url>
+      <descripcion>World Wide Web Consortium.</descripcion>
+   </pagina>
+</pagina>
+</alumnos>
