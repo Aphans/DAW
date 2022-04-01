@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE reservas SYSTEM "tarea8.dtd">
+<reservas>
+	<reserva cliente="CLI1" tipo="AD" habitacion="Doble">
+		<fechaInicio anho="2013" mes="F" dia="5"/>
+		<fechaFin anho="2013" mes="F" dia="9" />
+		<observaciones>LLegan sobre las 23:30</observaciones>
+	</reserva>
+	<reserva cliente="CLI2" tipo="MP" habitacion="Individual">
+		<fechaInicio anho="2013" mes="F" dia="7" />
+		<fechaFin anho="2013" mes="F" dia="15" />
+    <observaciones>Salida a las 16:00</observaciones>
+	</reserva>
+	<reserva cliente="CLI1" tipo="TI" habitacion="Doble">
+		<fechaInicio anho="2013" mes="F" dia="18" />
+		<fechaFin anho="2013" mes="F" dia="23" />
+	</reserva>
+	<cliente id="CLI1">
+		<nombre>Eva</nombre>
+		<apellidos>Sobral García</apellidos>
+		<movil>688998899</movil>
+		<correo>eva.sobral@micorreo.com</correo>
+	</cliente>
+	<cliente id="CLI2">
+		<nombre>Juan</nombre>
+		<apellidos>López Paz</apellidos>
+		<movil>677778899</movil>
+	</cliente>
+</reservas>

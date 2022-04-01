@@ -1,0 +1,8 @@
+package Ejercicios;
+import java.util.Scanner;
+
+public class Ejercicio_27 {
+	public static void main(String[]Args) {
+		Scanner entrada = new Scanner (System.in);
+		int sueldo=0, empleados=10,em,contador=0;
+		

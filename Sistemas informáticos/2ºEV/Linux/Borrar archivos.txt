@@ -1,0 +1,5 @@
+rm nombre fichero
+
+rm ? .txt borra los ficheros que tienen un carácter
+
+rm *.txt  borra todos los fichertos txt

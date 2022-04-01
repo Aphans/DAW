@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:noNamespaceSchemaLocation="tarea2a.xsd">
+	  <nombre>Pepito Pérez</nombre> 
+	  <direccion>
+    	<calle>Buenos Aires</calle>  
+    	<numero>17</numero>
+    	<ciudad>Vigo</ciudad>
+    	<provincia>Pontevedra</provincia>
+	  </direccion>
+	  <telefono>986987456</telefono>
+  </alumno>

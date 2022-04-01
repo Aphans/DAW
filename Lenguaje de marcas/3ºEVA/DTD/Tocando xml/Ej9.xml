@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE cuerpo [   
+<!ENTITY % repetido 
+    "para | imagen | lds |lo |codigo">
+<!ELEMENT cuerpo (titulo, (%repetido;)+,seccion)>
+<!ELEMENT seccion (titulo, %repetido;, seccion*)>
+<!ATTLIST seccion id ID #REQUIRED>
+<!ELEMENT articulo %repetido>
+ ]>  

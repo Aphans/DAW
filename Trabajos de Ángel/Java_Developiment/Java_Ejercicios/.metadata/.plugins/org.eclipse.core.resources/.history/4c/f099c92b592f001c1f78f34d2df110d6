@@ -1,0 +1,20 @@
+package Ejercicios;
+import java.util.Scanner;
+
+public class Ejercicio_25{
+	public static void main(String[]Args) {
+		 Scanner entrada = new Scanner (System.in);
+		 int num,suma,contador = 0,A;
+		 System.out.println("Introduce números distintos a 0 para realizar su suma");
+		 if (contador==2) {
+		 do {
+			num=entrada.nextInt();
+			A=num;
+			suma = num+num;
+			contador++;
+			
+			} while( num !=0 && contador<=10);
+		 entrada.close();
+	}
+}
+}

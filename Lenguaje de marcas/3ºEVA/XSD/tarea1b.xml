@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="tarea1b.xsd" precio="10">
+  <titulo>El capitán alatriste</titulo>
+  <autor>Arturo Pérez-Reverte</autor>
+  <autor>Carlota Pérez-Reverte</autor>
+  <editorial>Alfaguara</editorial>
+</libro>

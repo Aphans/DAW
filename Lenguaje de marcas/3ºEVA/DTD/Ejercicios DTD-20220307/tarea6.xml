@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE edificio SYSTEM "tarea6.dtd">
+<edificio alquiler="verdadero">
+<direccion>
+    <calle>
+        C/No sé
+    </calle>   
+    <numero>
+        3
+    </numero>
+    <poblacion>
+        Madrid
+    </poblacion>
+    <provincia>
+        Madrid
+    </provincia>
+    <codigoPostal>
+        2900
+    </codigoPostal>
+</direccion>
+    <fechaConstruccion mes="44040" anho="333"/>
+    <material>
+    </material>
+</edificio>

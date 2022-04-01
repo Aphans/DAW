@@ -1,0 +1,8 @@
+Ocultar archivos
+
+poniendo . delante
+
+Desocultar archivos
+
+quitando . delante
+

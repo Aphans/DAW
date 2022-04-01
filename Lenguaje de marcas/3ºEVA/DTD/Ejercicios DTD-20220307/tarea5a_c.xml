@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE material [
+  <!ELEMENT material (articulo*)>
+  <!ELEMENT articulo EMPTY>
+  <!ATTLIST articulo nombre CDATA #REQUIRED cantidad CDATA "1">
+]>
+
+<material>
+  <articulo nombre="cuaderno" cantidad="2"/>
+  <articulo nombre="boli" cantidad="2"/>
+  <articulo nombre="goma" cantidad="3"/>
+  <articulo nombre="regla" cantidad=""/>
+</material>

@@ -1,0 +1,39 @@
+body{
+    font-family:arial;
+}
+h3{
+    text-align: center;
+    font-size: 3em;
+    margin-top: 60px;
+}
+.comunes{
+    border: 3px solid darkcyan;
+    background-color: darkseagreen;
+}
+.tamañoA{
+    width: 300px;
+    height: 200px;
+}
+.tamañoB{
+    width: 300px;
+    height: 500px;
+}
+#Uno{
+    position: relative;
+    top:300px;
+}
+#Dos{
+    position:fixed;
+    top:400px;
+    left:100px;
+    z-index: 1;
+}
+#Tres{
+    position:absolute;
+    top:0px;
+}
+#Cuatro{
+    position:fixed;
+    top:0px;
+    left:350px;
+}

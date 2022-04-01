@@ -1,0 +1,15 @@
+package Ejercicios;
+import java.util.Scanner;
+
+public class Ejercicio_25{
+	public static void main(String[]Args) {
+		 Scanner entrada = new Scanner (System.in);
+		 int num,suma;
+		 do {
+			num=entrada.nextInt();
+			suma = num+num;
+			
+			} while( num !=0 );
+		 entrada.close();
+	}
+}

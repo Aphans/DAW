@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BandejaEntrada>
+    <Correo>
+        <Remitente></Remitente>
+        <Destinatario></Destinatario>
+        <Asunto></Asunto>
+        <Cuerpo></Cuerpo>
+    </Correo>
+</BandejaEntrada>

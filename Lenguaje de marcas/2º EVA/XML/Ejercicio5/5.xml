@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<videoclub xmlns="www.videoclub/videoclub/"
+xmlns:pl ="wwww.videoclub/peliculas/"
+xmlns:cl="www.videoclub/clientes/">
+    <pl:peliculas>
+        <pl:pelicula>
+            <pl:id></pl:id>
+            <pl:nombre>SSSSSS     DD  D 
+
+            </pl:nombre>
+            <pl:director></pl:director>
+        </pl:pelicula>
+    </pl:peliculas>
+    <cl:Clientes>
+        <cl:Cliente>
+            <cl:id></cl:id>
+            <cl:nombre></cl:nombre>
+            <cl:dirección></cl:dirección>
+            <cl:fechaNacimiento día="" mes="" año=""/>
+        </cl:Cliente>
+    </cl:Clientes>
+</videoclub>

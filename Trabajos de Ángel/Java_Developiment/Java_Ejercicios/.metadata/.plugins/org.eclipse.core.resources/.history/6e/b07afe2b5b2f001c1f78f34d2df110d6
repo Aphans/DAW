@@ -1,0 +1,19 @@
+package Ejercicios;
+import java.util.Scanner;
+
+public class Ejercicio_25{
+	public static void main(String[]Args) {
+		 Scanner entrada = new Scanner (System.in);
+		 int num1,num2,contador = 0,total,A;
+		 System.out.println("Introduce números distintos a 0 para realizar su suma");
+		 do {
+			num1=entrada.nextInt();
+			contador++;
+			A=num1;
+			total=A+num2;
+			} while( (num1!=0 && num2!=0) && contador<=10);
+		 System.out.println("El total de la suma es:"+total);
+		 entrada.close();
+	}
+}
+

@@ -1,0 +1,22 @@
+package Ejercicios;
+import java.util.Scanner;
+
+public class Ejercicio_26 {
+	public static void main(String[]Args) {
+		Scanner entrada = new Scanner (System.in);
+		int cantidad,num=0,ac=0;
+		System.out.println("Introduzca la cantidad de números");
+		cantidad=entrada.nextInt();
+		System.out.println("Introduce los números");
+		num=entrada.nextInt()
+			for (int i=0;i<cantidad;i++) {//Contador = i;
+				if(num<0) {
+				ac=num+ac;
+				System.out.print("La media es:"+ac/cantidad);
+				
+			}
+			entrada.close();
+			
+		}
+	}
+}

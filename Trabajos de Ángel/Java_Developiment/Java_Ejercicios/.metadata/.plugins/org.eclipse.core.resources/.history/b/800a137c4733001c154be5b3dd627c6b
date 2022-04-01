@@ -1,0 +1,17 @@
+package Ejercicios;
+import java.util.Scanner;
+public class Ejercicio_51 {
+	public static void main(String[] args) {
+	    final int nMax = 2;
+	    int Almc;
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Escribe números a multiplicar");
+		for (int i = 0; i <nMax; i++) {
+		do {
+			int n = entrada.nextInt();
+			
+		}while ()
+			
+		}
+}
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<e1:carta xmlns:e1="http://www.carta.com/carta1">
+   <e1:carta>
+      <e1:palo>Corazones</e1:palo>
+      <e1:numero>7</e1:numero>
+   </e1:carta>
+   <carta xmlns="">
+      <carnes>
+         <filete_de_ternera precio="12.95"/>
+         <solomillo_a_la_pimienta precio="13.60"/>
+      </carnes>
+      <pescados>
+         <lenguado_al_horno precio="16.20"/>
+         <merluza_en_salsa_verde precio="15.85"/>
+      </pescados>
+   </carta>
+</e1:carta>

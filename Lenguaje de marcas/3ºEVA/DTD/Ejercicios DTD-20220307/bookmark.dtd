@@ -1,0 +1,12 @@
+<!ELEMENT bookmark (origen,titulo,descripcion,grupo)>
+<!ELEMENT origen (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT grupo (archivo*,Contenido)>
+<!ELEMENT archivo (#PCDATA)>
+<!ELEMENT Contenido (#PCDATA)>
+    <!ATTLIST grupo id CDATA #REQUIRED>
+    <!ENTITY wap "wapdev_meta.xml">
+    <!ENTITY wapfacil  "wapdev/wapfacil.xml">
+    <!ENTITY asph  "wapdev/asphtml.xml">
+    <!ENTITY cestaCompra "wapdev/cestacompra.xml">

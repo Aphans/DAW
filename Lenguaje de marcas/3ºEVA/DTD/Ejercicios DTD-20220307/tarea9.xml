@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE bookmark SYSTEM "bookmark.dtd" [
+ <!ENTITY wapfacil  "wapdev/wapfacil.xml">
+ <!ENTITY wmlclub  "wapdev_meta.xml">
+ <!ENTITY asphtml  "wapdev/asphtml.xml">
+ <!ENTITY cestacompra  "wapdev/cestacompra.xml">
+  <!ENTITY meta SYSTEM "meta.xml">
+]>
+
+<bookmark>
+ <origen> “&meta;”</origen>
+ <titulo>Información general sobre WAP</titulo>
+ <descripcion>Recopilación de direcciones sobre WAP y WML.</descripcion>
+ <grupo id="doc-portales">
+    <archivo> "&wapfacil;" </archivo>
+    <archivo> "&asphtml;" </archivo>
+    <archivo> "&cestacompra;"</archivo>    
+  </grupo>
+</bookmark>

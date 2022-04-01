@@ -1,0 +1,12 @@
+<!ELEMENT CentroSocial (reserva*)>
+<!ELEMENT reserva (fecha,(clienteEmpresa | clientePersonal))>
+<!ATTLIST reserva 
+    ubicacion (polideportivo | localSocial) #REQUIRED 
+    bonificacion CDATA #IMPLIED
+    evento CDATA #IMPLIED>
+<!ELEMENT clienteEmpresa (#PCDATA)>
+<!ELEMENT clientePersonal (#PCDATA)>
+<!ELEMENT fecha EMPTY>
+<!ATTLIST fecha mes CDATA #REQUIRED
+    dia CDATA #REQUIRED
+    horario  CDATA (MAÑANA | TARDE | DIA) "TARDE">

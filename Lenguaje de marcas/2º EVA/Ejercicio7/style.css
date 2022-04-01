@@ -1,0 +1,12 @@
+.caja1{
+border: 2px dotted green yellow red blue
+}
+.caja2{
+width: 300px;
+height: 200px;
+border: solid green 7px;
+background-color: gray;
+color: white;
+padding: 5px;
+margin: 0px;
+}

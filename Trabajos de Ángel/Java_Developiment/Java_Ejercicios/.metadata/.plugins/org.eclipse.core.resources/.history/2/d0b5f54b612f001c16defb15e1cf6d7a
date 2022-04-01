@@ -1,0 +1,19 @@
+package Ejercicios;
+import java.util.Scanner;
+
+public class Ejercicio_26{
+	public static void main(String[]Args) {
+		Scanner entrada = new Scanner (System.in);
+		int num,ac=0,media;
+		System.out.println("Introduzca la cantidad de números");
+		num=entrada.nextInt();
+		for (int i=0;i<num;i++) {
+		    System.out.println("Introduce los números");
+			num=entrada.nextInt();
+			ac=ac+num;
+			media = ac/num;
+			entrada.close();
+			System.out.print("La media es;"+media);
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.caja1{
+width:250px;
+height: 200px;
+border:solid red 5px;
+background-color: rgb(158, 156, 156);
+padding: 10px;
+margin: 25px;
+}
+.caja2{
+width: 300px;
+height: 200px;
+border: solid green 7px;
+background-color: gray;
+color: white;
+padding: 5px;
+margin: 0px;
+}

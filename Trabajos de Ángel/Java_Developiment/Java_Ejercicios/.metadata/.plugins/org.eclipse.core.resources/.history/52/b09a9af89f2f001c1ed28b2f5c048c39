@@ -1,0 +1,17 @@
+package Ejercicios;
+import java.util.Scanner;
+
+public class Ejercicio_27 {
+	public static void main(String[]Args) {
+		Scanner entrada = new Scanner (System.in);
+		int sueldo=0, empleados=10,em,contador=0;
+		while
+		System.out.println("Introduce el salario del empleado");
+		sueldo=entrada.nextInt();
+        (sueldo > 1000) {
+		em=contador+1;
+	    System.out.println("Los empleados con sueldo +1000 son:"+em);
+	    entrada.close();
+}
+	}
+}

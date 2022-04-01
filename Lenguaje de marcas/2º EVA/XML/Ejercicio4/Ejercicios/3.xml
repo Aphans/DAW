@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BandejaEntrada>
+    <Correo>
+        <Remitente value1="nombre" value2="email"/>
+        <Destinatario value1="nombre" value2="email"/>
+        <Asunto value="párrafos"/>
+        <Cuerpo value="párrafos"/>
+    </Correo>
+</BandejaEntrada>

@@ -1,0 +1,18 @@
+No se puede utilizar la subred a la que se refiere esta y la última subred porque esta reservada al broadcast
+
+En total nos quedan 256-2 = 254 host para subredes 
+
+255.255.255.0 = /24  8 bits para host,2^24-2=254 ordenadores
+
+IP/24
+
+Para saber una ip mediante la operación AND 
+calculando la ip y máscara de subred 
+
+es multiplicar los bits de la ip y máscara de la subred y luego hallar la ip mediante los numeros binarios
+
+Puerta de enlace para conectar la red con el exterior y otras redes. Suele acabar en 1
+
+HAY TRES TIPOS DE REDES: CLASE A,B,C,D,E IMPORTANTES A B C
+
+La dirección de red es la misma ip pero acabando en 0

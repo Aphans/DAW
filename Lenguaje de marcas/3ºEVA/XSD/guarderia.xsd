@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="guarderia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="niño" minOccurs="1" maxOccurs="50">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" type="xs:string"/>
+              <xs:element name="fechaNacimiento" type="xs:date"/>
+              <xs:element name="peso" type="xs:decimal"/>
+              <xs:element name="altura" type="xs:unsignedByte"/>
+              <xs:element name="vacunas" type="xs:boolean"/>
+            </xs:sequence>
+          	<xs:attribute name="numeroExpediente" type="xs:unsignedShort"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
