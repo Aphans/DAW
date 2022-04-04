@@ -42,3 +42,5 @@ Nivel enlace capa 2
 siwtch macadress capa 2
 
 --DMZ 
+--Directorio activo/Dominio, arbol y bosque. 
+--Un controlador de dominio es un servidor server 
