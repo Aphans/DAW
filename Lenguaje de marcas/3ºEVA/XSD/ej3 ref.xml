@@ -3,11 +3,12 @@
 <xs:element name="agenda">
     <xs:complexType>
     <xs:sequence>
-        <xs:element name="direccion" type="direccion"></xs:element>
+        <xs:element ref="direccion"></xs:element>
     </xs:sequence>
     </xs:complexType>
 </xs:element>   
-<xs:complexType name="direccion">
+<xs:element name="direccion">
+    <xs:complexType>
             <xs:sequence>
                 <xs:element name="calle" type="xs:string"/>
                 <xs:element name="numero" type="xs:integer"/>   
@@ -15,4 +16,5 @@
                 <xs:element name = "piso" type = "xs:integer"/>
             </xs:sequence>
         </xs:complexType>
+    </xs:element>
 </xs:schema>
