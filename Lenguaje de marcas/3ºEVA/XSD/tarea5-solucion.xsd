@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="persona">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="datos" type="datosPersona"/>
+                <xs:element name="comentario" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="nacimiento" type="xs:date" use="required" />
+        </xs:complexType>
+    </xs:element>
+        <xs:complexType name="datosPersona">
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string" />
+                <xs:element name="apellidos">
+                    <xs:simpleType>
+                     <xs:restriction base="xs:string">
+                         <xs:maxLength value="50"/>
+                     </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="dni" type="xs:NMTOKEN" />
+            </xs:sequence>
+        </xs:complexType>
+</xs:schema>
