@@ -202,19 +202,19 @@ begin
 for vfunc in cur loop
   dbms_output.put_line(vfunc.funcion);
   vfuncion:=vfunc.funcion;
-  for vmecanicos in cur2 loop
+for vmecanicos in cur2 loop
     dbms_output.put_line(vmecanicos.nombre || ' ' || vmecanicos.telefono);
     vnempleado:=vmecanicos.nempleado;
-    open cur3;
+open cur3;
     n:=1;
-    fetch cur3 into registro;
+fetch cur3 into registro;
     while (n<=3 and cur3%found) loop
       if vdias is null then
         vdias:=trunc(sysdate-vfecha_entrada);
       end if;
       dbms_output.put_line(vmatricula || ' ' || vnombre || ' '  || vimporte || ' ' || vfecha_entrada || ' '  || vdias);
       n:=n+1;
-      fetch cur3 into registro; --Leer la siguiente línea
+fetch cur3 into registro; --Leer la siguiente línea
       end loop;
     close cur3;
     

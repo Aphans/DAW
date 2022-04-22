@@ -16,3 +16,8 @@ Puerta de enlace para conectar la red con el exterior y otras redes. Suele acaba
 HAY TRES TIPOS DE REDES: CLASE A,B,C,D,E IMPORTANTES A B C
 
 La dirección de red es la misma ip pero acabando en 0
+
+La puerta de enlace SIEMPRE tiene que ser igual para todos los dispositivos, la puerta de enlace estará definida en un dispositivo que da salida al exterior y esta dará la puerta de enlace en los demás dispositivos
+
+
+En el protócolo DHCP si no encuentra un servidor el dispoisitivo no se le puede otorgar ip de forma automática, e se le asigna una IP mediante el prótocolo APIPA 169.254....,antes se le pregunta a los demás dispositivos si tienen esta IP.

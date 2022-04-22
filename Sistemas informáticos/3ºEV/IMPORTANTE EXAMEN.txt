@@ -44,3 +44,5 @@ siwtch macadress capa 2
 --DMZ 
 --Directorio activo/Dominio, arbol y bosque. 
 --Un controlador de dominio es un servidor server 
+
+--Protócolo DHCP
