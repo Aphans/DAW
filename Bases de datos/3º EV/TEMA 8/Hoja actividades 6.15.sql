@@ -25,5 +25,36 @@ pverempleoficio('VENDEDOR');
 END;
 
 --EJ3
+CREATE OR REPLACE PROCEDURE paumentosalario2(pNumeroDepartamento number)
+AS
+    CURSOR c_empleados IS SELECT EMP_NO,APELLIDO,OFICIO,DIR,FECHA_ALT,SALARIO,COMISION,DEPT_NO FROM EMPLE WHERE DEPT_NO = pNumeroDepartamento; 
+    BEGIN
+        FOR v_info IN c_empleados LOOP
+            DBMS_OUTPUT.PUT_LINE('EMP_NO:'||v_info.EMP_NO);
+            DBMS_OUTPUT.PUT_LINE('APELLIDO:'||v_info.APELLIDO);
+            DBMS_OUTPUT.PUT_LINE('OFICIO:'||v_info.OFICIO);
+            DBMS_OUTPUT.PUT_LINE('DIR:'||v_info.DIR);
+            DBMS_OUTPUT.PUT_LINE('FECHA_ALT:'||v_info.FECHA_ALT);
+            DBMS_OUTPUT.PUT_LINE('SALARIO:'||v_info.SALARIO);
+            DBMS_OUTPUT.PUT_LINE('COMISION:'||v_info.COMISION);
+            DBMS_OUTPUT.PUT_LINE('DEPT_NO:'||v_info.DEPT_NO);
+            DBMS_OUTPUT.PUT_LINE('--------------------------');
+        CASE 
+        WHEN v_info.OFICIO='Analistas' THEN
+        UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*0.5;
+        WHEN v_info.OFICIO='Vendedores' THEN
+        UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*0.3;
+        WHEN v_info.OFICIO='Directores' THEN
+        UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*1;
+        ELSE
+        UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*0.2;
+        END CASE;
+        END LOOP;
+    END;
+    /
+
+BEGIN
+paumentosalario2(20);
+END;
 --EJ4
 --EJ5
