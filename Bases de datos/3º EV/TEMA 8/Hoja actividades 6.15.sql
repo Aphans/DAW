@@ -56,5 +56,51 @@ AS
 BEGIN
 paumentosalario2(20);
 END;
---EJ4
+--EJ4 
+--Selecciona el apellido y salario de los 5 empleados con el salario mas alto
+CREATE OR REPLACE PROCEDURE salarioMasAlto
+AS 
+    CURSOR c_salarioMasAlto IS SELECT APELLIDO,SALARIO FROM EMPLE ORDER BY SALARIO DESC;
+    registro c_salarioMasAlto%ROWTYPE;
+    BEGIN
+    OPEN c_SalarioMasAlto;
+    FOR v_salarioMasAlto IN 1..5 LOOP
+    FETCH c_SalarioMasAlto INTO registro;
+    DBMS_OUTPUT.PUT_LINE('APELLIDO:'||registro.APELLIDO);
+    DBMS_OUTPUT.PUT_LINE('SALARIO:'||registro.SALARIO);
+    DBMS_OUTPUT.PUT_LINE('-----------------------------');
+    FETCH c_SalarioMasAlto INTO registro;
+    END LOOP;
+    CLOSE c_SalarioMasAlto;
+    END;
+    /
+    
+BEGIN
+salarioMasAlto;
+END;
 --EJ5
+CREATE OR REPLACE PROCEDURE menosSalarioPorOficio
+AS
+    CURSOR c_menosSalario IS SELECT EMP_NO,APELLIDO,OFICIO,DIR,FECHA_ALT,SALARIO,COMISION,DEPT_NO
+                            FROM EMPLE
+                                GROUP BY OFICIO, SALARIO, EMP_NO, APELLIDO, DIR, FECHA_ALT, COMISION, DEPT_NO
+                                HAVING SALARIO IN(SELECT MIN(SALARIO) FROM EMPLE GROUP BY OFICIO);
+    BEGIN
+    FOR v_menosSalario IN c_menosSalario LOOP  
+        DBMS_OUTPUT.PUT_LINE('EMP_NO:'||v_menosSalario.EMP_NO);
+        DBMS_OUTPUT.PUT_LINE('APELLIDO:'||v_menosSalario.APELLIDO);
+        DBMS_OUTPUT.PUT_LINE('OFICIO:'||v_menosSalario.OFICIO);
+        DBMS_OUTPUT.PUT_LINE('DIR:'||v_menosSalario.DIR);
+        DBMS_OUTPUT.PUT_LINE('FECHA_AL:'||v_menosSalario.FECHA_ALT);
+        DBMS_OUTPUT.PUT_LINE('SALARIO:'||v_menosSalario.SALARIO);
+        DBMS_OUTPUT.PUT_LINE('COMISION:'||v_menosSalario.COMISION);
+        DBMS_OUTPUT.PUT_LINE('DEPT_NO:'||v_menosSalario.DEPT_NO);
+        DBMS_OUTPUT.PUT_LINE('----------------------------------');
+    END LOOP;
+    END;
+    /
+    
+BEGIN
+menosSalarioPorOficio;
+END;
+/
