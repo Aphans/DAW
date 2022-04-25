@@ -72,6 +72,20 @@ E)Dar permisos a USU1 para que pueda conectarse a la BD.
 --SOLUCIÓN:
     GRANT CREATE SESSION TO USU1;
 
+F) Crear un rol q permita conectarse a la bd y hacer SELECT sobre
+las tablas anteriormente creadas. 
+--SOLUCIÓN:
+    CREATE ROLE CONNE;
+
+    GRANT SELECT TO CONNE;
+
+    GRANT CREATE SESSION TO CONNE;
+
+    GRANT CONNE TO USU1;
+
+G)Asignar el rol creado en el apartado anterior a USU2 y a USU3.
+--SOLUCIÓN
+    GRANT CONNE TO USU2,USU3;
 
 H)Conceder al USU4 privilegios sobre TABLA1 y sobre TABLA2 de
 inserción y borrado con la opción de poder concedérselos a otros
@@ -99,15 +113,15 @@ modificar tablespace.
 J)Conceder a todos los usuarios de la BD privilegios para que
 puedan modificar columnas de TABLA1 y TABLA2. 
 --SOLUCIÓN:
-    GRANT ALTER ON TABLA TO PUBLIC;
-    GRANT ALTER ON TABLA2 TO PUBLIC;
+    GRANT UPDATE ON TABLA TO PUBLIC;
+    GRANT UPDATE ON TABLA2 TO PUBLIC;
 
 K)Quitar a los usuarios USU3 y USU4 todos los privilegios q tenían
 asignados.
 --SOLUCIÓN:
 REVOKE ALL PRIVILEGES ON TABLA FROM USU3;
 REVOKE ALL PRIVILEGES ON TABLA2 FROM USU4;
-
+REVOKE ROL FROM USU3;
 
 L)Hacer que USU5 solo pueda conectarse en dos sesiones
 concurrentes a la vez. 
@@ -120,6 +134,6 @@ M)Limitar el tiempo de conexión a la BD a 5 minutos a los usuarios
 USU2 y USU3. 
 --SOLUCIÓN:
     CREATE PROFILE P_INACTIVE LIMIT
-    IDLE_TIME 5; --Se crea un perfil para asignar el tiempo de conexión
+    CONNECT_TIME 5; --Se crea un perfil para asignar el tiempo de conexión
     ALTER USER USU2 PROFILE P_INACTIVE; --Se asigna este tiempo de conexión a los usuarios
     ALTER USER USU3 PROFILE P_INACTIVE;

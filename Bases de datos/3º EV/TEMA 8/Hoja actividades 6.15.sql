@@ -64,8 +64,8 @@ AS
     registro c_salarioMasAlto%ROWTYPE;
     BEGIN
     OPEN c_SalarioMasAlto;
-    FOR v_salarioMasAlto IN 1..5 LOOP
     FETCH c_SalarioMasAlto INTO registro;
+    FOR v_salarioMasAlto IN 1..5 LOOP
     DBMS_OUTPUT.PUT_LINE('APELLIDO:'||registro.APELLIDO);
     DBMS_OUTPUT.PUT_LINE('SALARIO:'||registro.SALARIO);
     DBMS_OUTPUT.PUT_LINE('-----------------------------');

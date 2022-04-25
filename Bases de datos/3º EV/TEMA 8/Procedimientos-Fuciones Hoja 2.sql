@@ -409,8 +409,8 @@ ELSE
      END IF;
      END IF;
 END IF;
-IF v_existeAnimal is not null AND v_buscavet is not null THEN
    v_buscaVet:=busca_Vet(p_nombreVeterinario);
+IF v_existeAnimal is not null AND v_buscavet is not null THEN
    INSERT INTO VISITAS VALUES (v_existeAnimal,SYSDATE,v_buscaVet,'Revisión',null,null);
 END IF;
 EXCEPTION 

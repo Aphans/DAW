@@ -38,8 +38,7 @@ BEGIN
     FOR v_subida IN c_subir LOOP
     IF pImporte>(v_subida.SALARIO+(v_subida.Salario/100)*pPorcentaje) THEN
         UPDATE EMPLE SET SALARIO=SALARIO+pImporte WHERE CURRENT OF c_subir;
-    END IF;
-    IF pImporte<(v_subida.SALARIO+(v_subida.Salario/100)*pPorcentaje) THEN
+    ELSE
         UPDATE EMPLE SET SALARIO=(v_subida.SALARIO+(Salario/100)*pPorcentaje) WHERE CURRENT OF c_subir;
     END IF;
     v_contador:=v_contador+1;
