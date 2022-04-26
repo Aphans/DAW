@@ -107,38 +107,39 @@ END;
 ---------------------------------------------------------------------EJ8 HOJA 3--------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE EJ8 
 AS
-    v_Funcion MECANICOS.FUNCION%TYPE;
-    v_Empleado ARREGLOS.NEMPLEADO%TYPE;
-    CURSOR c_InfoFuncion IS SELECT FUNCION FROM MECANICOS;
-    CURSOR c_InfoMecanico IS SELECT NOMBRE,TELEFONO,NEMPLEADO FROM MECANICOS WHERE FUNCION = v_Funcion;
-    CURSOR c_InfoArreglos IS SELECT ARREGLOS.MATRICULA MATRICULA,NOMBRE,FECHA_ENTRADA,TO_NUMBER(TRUNC(FECHA_SALIDA-FECHA_ENTRADA)) DIAS,IMPORTE FROM CLIENTES_TALLER
+   
+    CURSOR c_InfoFuncion IS SELECT DISTINCT FUNCION FROM MECANICOS;
+    CURSOR c_InfoMecanico(func MECANICOS.FUNCION%TYPE) IS SELECT NOMBRE,TELEFONO,NEMPLEADO FROM MECANICOS WHERE FUNCION = func;
+    CURSOR c_InfoArreglos(empleado MECANICOS.NEMPLEADO%TYPE) IS SELECT ARREGLOS.MATRICULA MATRICULA,NOMBRE,FECHA_ENTRADA,TO_NUMBER(TRUNC(FECHA_SALIDA-FECHA_ENTRADA)) DIAS,IMPORTE FROM CLIENTES_TALLER
                                 JOIN COCHES_TALLER ON CLIENTES_TALLER.NCLIENTE = COCHES_TALLER.NCLIENTE
                                 JOIN ARREGLOS ON COCHES_TALLER.MATRICULA = ARREGLOS.MATRICULA
-                                WHERE ARREGLOS.NEMPLEADO =  v_Empleado 
+                                WHERE ARREGLOS.NEMPLEADO = empleado 
                                 ORDER BY FECHA_ENTRADA DESC;
-    v_number number:=1;    
+    v_number number:=0;    
     registro c_InfoArreglos%ROWTYPE;
-    BEGIN
-        FOR v_infoFuncion IN c_InfoFuncion LOOP
-            v_Funcion:=v_infoFuncion.FUNCION;
-            FOR v_infoMecanico IN c_InfoMecanico LOOP
-                v_Empleado:=v_infoMecanico.NEMPLEADO;
-                DBMS_OUTPUT.PUT_LINE('NOMBRE MECÁNICO:'||v_infoMecanico.NOMBRE);
-                DBMS_OUTPUT.PUT_LINE('TELÉFONO:' || v_infoMecanico.TELEFONO);               
-                   OPEN c_InfoArreglos;
-                   v_number:=1;
-                    FETCH c_InfoArreglos into registro;
-                        DBMS_OUTPUT.PUT_LINE('----------ARREGLOS---------');
-                        WHILE (v_number<=3 and c_InfoArreglos%found) LOOP
-                        dbms_output.put_line(registro.matricula || ' ' || registro.nombre || ' '  || registro.importe || ' ' || registro.fecha_entrada || ' '  || registro.dias);
-                        v_number:=v_number+1;
-                    FETCH c_InfoArreglos into registro; --Leer la siguiente línea
-                    END LOOP;
-                    dbms_output.put_line('--------------------------------------------------');
-                    CLOSE c_InfoArreglos;
+BEGIN
+    FOR v_infoFuncion IN c_InfoFuncion LOOP
+        DBMS_OUTPUT.PUT_LINE('FUNCIÓN:'||v_infoFuncion.FUNCION);
+        FOR v_infoMecanico IN c_InfoMecanico(v_infoFuncion.FUNCION) LOOP
+            DBMS_OUTPUT.PUT_LINE('NOMBRE MECÁNICO:'||v_infoMecanico.NOMBRE);
+            DBMS_OUTPUT.PUT_LINE('TELÉFONO:' || v_infoMecanico.TELEFONO);    
+               OPEN c_InfoArreglos(v_infoMecanico.NEMPLEADO);
+               v_number:=0;
+                FETCH c_InfoArreglos into registro ;
+                    DBMS_OUTPUT.PUT_LINE('----------ARREGLOS---------');
+                    WHILE (v_number < 3 and c_InfoArreglos%found) LOOP
+                    dbms_output.put_line(registro.MATRICULA || ' ' || registro.nombre || ' '  || registro.importe || ' ' || registro.FECHA_ENTRADA || ' '  || registro.dias);
+                FETCH c_InfoArreglos into registro; --Leer la siguiente línea
+                 v_number:=v_number+1;
                 END LOOP;
-                END LOOP;
-    END;
+              DBMS_OUTPUT.PUT_LINE('ARREGLOS:'||v_number);
+                v_number:=0;
+                dbms_output.put_line('--------------------------------------------------');
+                CLOSE c_InfoArreglos;
+        END LOOP;
+    END LOOP;
+END;
+/
     
 BEGIN
 EJ8;
@@ -180,3 +181,6 @@ WITH CHECK OPTION;/*Para que no pueda insertarse en la vista si no se cumple el 
 WITH READ ONLY /*Solo lectura*/
 
 DROP VIEW DEPT10; --Eliminar la vista
+
+
+CREATE OR REPLACE VIEW B

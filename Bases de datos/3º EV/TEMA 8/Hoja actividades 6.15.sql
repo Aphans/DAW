@@ -27,7 +27,7 @@ END;
 --EJ3
 CREATE OR REPLACE PROCEDURE paumentosalario2(pNumeroDepartamento number)
 AS
-    CURSOR c_empleados IS SELECT EMP_NO,APELLIDO,OFICIO,DIR,FECHA_ALT,SALARIO,COMISION,DEPT_NO FROM EMPLE WHERE DEPT_NO = pNumeroDepartamento; 
+    CURSOR c_empleados IS SELECT EMP_NO,APELLIDO,OFICIO,DIR,FECHA_ALT,SALARIO,COMISION,DEPT_NO FROM EMPLE WHERE DEPT_NO = pNumeroDepartamento AND UPPER(OFICIO)!='PRESIDENTE'   FOR UPDATE; 
     BEGIN
         FOR v_info IN c_empleados LOOP
             DBMS_OUTPUT.PUT_LINE('EMP_NO:'||v_info.EMP_NO);
@@ -39,22 +39,22 @@ AS
             DBMS_OUTPUT.PUT_LINE('COMISION:'||v_info.COMISION);
             DBMS_OUTPUT.PUT_LINE('DEPT_NO:'||v_info.DEPT_NO);
             DBMS_OUTPUT.PUT_LINE('--------------------------');
-        CASE 
-        WHEN v_info.OFICIO='Analistas' THEN
-        UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*0.5;
-        WHEN v_info.OFICIO='Vendedores' THEN
-        UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*0.3;
-        WHEN v_info.OFICIO='Directores' THEN
-        UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*1;
-        ELSE
-        UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*0.2;
-        END CASE;
+            CASE v_info.OFICIO
+                WHEN 'Analistas' THEN
+                    UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*0.5 WHERE CURRENT OF c_empleados ;
+                WHEN 'Vendedores' THEN
+                    UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*0.3 WHERE CURRENT OF c_empleados;
+                WHEN 'Directores' THEN
+                    UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*1 WHERE CURRENT OF c_empleados;
+                ELSE
+                    UPDATE EMPLE SET SALARIO = SALARIO+(SALARIO/100)*0.2 WHERE CURRENT OF c_empleados;
+            END CASE;
         END LOOP;
     END;
     /
 
 BEGIN
-paumentosalario2(20);
+paumentosalario2(10);
 END;
 --EJ4 
 --Selecciona el apellido y salario de los 5 empleados con el salario mas alto
