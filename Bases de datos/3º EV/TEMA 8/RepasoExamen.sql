@@ -103,6 +103,79 @@ AS
 BEGIN
 ej19('T','3333AAA','CHAPISTA',5000);
 END;
+--------------------------------------------------------EJ27------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE Pedir_Revision(pAnimal varchar2,pNombreVeterinario varchar2)
+AS
+    e_noRellenos exception;
+    e_noEncontrado exception;
+    v_animal varchar2(64);
+    e_demasiadosRegistros exception;
+    v_veterinario number(38);
+    BEGIN
+           v_animal:=Busca_Animal(pAnimal);
+        IF(pAnimal is null OR pNombreVeterinario is null) THEN
+            RAISE e_noRellenos;
+        ELSE
+            IF(v_animal='1001') THEN
+                RAISE e_noEncontrado;
+            IF(v_animal='1002') THEN
+                RAISE e_demasiadosRegistros;
+             END IF;
+             END IF;
+        END IF;
+        v_veterinario:=Busca_Vet(pNombreVeterinario);
+        IF v_animal is not null AND v_veterinario is not null THEN
+                INSERT INTO VISITAS VALUES(v_animal,SYSDATE,v_veterinario,'REVISIÓN',null,null);
+        END IF;
+    EXCEPTION 
+    WHEN e_noRellenos THEN
+        DBMS_OUTPUT.PUT_LINE('No puede haber valores nulos');
+    WHEN e_noEncontrado THEN
+        DBMS_OUTPUT.PUT_LINE('El animal no ha sido encontrado');
+    WHEN e_demasiadosRegistros THEN
+        DBMS_OUTPUT.PUT_LINE('El identificador corresponde a varios registros');
+    END;
+    
+CREATE OR REPLACE FUNCTION Busca_Animal(pAnimal varchar2)
+RETURN VARCHAR2
+AS
+    v_identificador animales.ident%type;
+    BEGIN
+    IF(pAnimal between '0' and '100') THEN
+    SELECT IDENT INTO v_identificador FROM ANIMALES WHERE IDENT = pAnimal;
+        RETURN v_identificador;
+    ELSE
+    SELECT NOMBRE INTO v_identificador FROM ANIMALES WHERE UPPER(NOMBRE) LIKE '%'||UPPER(pAnimal)||'%';
+        RETURN v_identificador;
+    END IF;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RETURN '1001';
+    WHEN TOO_MANY_ROWS THEN
+        RETURN '1002';
+    RETURN v_identificador;
+    END;
+    
+CREATE OR REPLACE FUNCTION Busca_Vet(pNombreVeterinario varchar2)
+RETURN NUMBER
+    AS
+        v_numColegiado VETERINARIOS.NUMCOLEGIADO%TYPE;
+        BEGIN
+            SELECT NUMCOLEGIADO INTO v_numColegiado FROM VETERINARIOS WHERE UPPER(NOMBRE) LIKE '%'||UPPER(pNombreVeterinario)||'%';
+                RETURN v_numColegiado;
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                SELECT NUMCOLEGIADO INTO v_numColegiado FROM VETERINARIOS WHERE NUMCOLEGIADO = (SELECT MAX(NUMCOLEGIADO) FROM VETERINARIOS);
+                    RETURN v_numColegiado;
+            WHEN TOO_MANY_ROWS THEN
+                SELECT MAX(NUMCOLEGIADO) INTO v_numColegiado FROM VETERINARIOS WHERE NOMBRE like '%'||pNombreVeterinario||'%';
+                RETURN  v_numColegiado;
+        END;
+    
+BEGIN
+    pedir_Revision('1','ELENA');
+END;
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------EJ8 HOJA 3--------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE EJ8 
@@ -183,4 +256,56 @@ WITH READ ONLY /*Solo lectura*/
 DROP VIEW DEPT10; --Eliminar la vista
 
 
-CREATE OR REPLACE VIEW B
+CREATE OR REPLACE VIEW MOVIMIENTOS11000
+AS
+    SELECT * FROM MOVIMIENTOS WHERE NUM_CUENTA=11000
+    WITH READ ONLY;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------EJERCICIOS TABLAS BANCO--------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+--EJ1
+CREATE OR REPLACE PROCEDURE clientes_unicos
+AS
+CURSOR c_titular is select DISTINCT nombre, num_cuenta from cuentas 
+                        natural join clientes 
+                        natural join movimientos 
+                        where  nif_cotitular is null and nif_titular is not null order by nombre ;
+CURSOR c_cuenta(cuenta cuentas.num_cuenta%type) is select num_cuenta, fechahora, importe, concepto from movimientos 
+                    where num_cuenta = cuenta;
+BEGIN
+    for v_registro1 in c_titular loop
+    dbms_output.put_line(v_registro1.nombre || ' * ' || v_registro1.num_cuenta);
+        for v_registro2 in c_cuenta(v_registro1.num_cuenta) loop
+            dbms_output.put_line(v_registro2.num_cuenta || ' * ' ||v_registro2.fechahora || ' * ' ||  v_registro2.importe || ' * ' || v_registro2.concepto);
+        end loop;
+    end loop;
+end;
+
+execute clientes_unicos;
+
+--EJ2
+CREATE OR REPLACE PROCEDURE mostrarCliente
+AS
+    CURSOR c_cuenta IS SELECT NUM_CUENTA,NIF_TITULAR,NIF_COTITULAR,FECHA_ABIERTA,NUM_SUCURSAL,TIPO,SALDO,CONTROL FROM CUENTAS;
+    CURSOR c_cliente(cuenta CUENTAS.NIF_TITULAR%TYPE)IS SELECT NIF,NOMBRE,DIRECCION,TELEFONO FROM CLIENTES WHERE NIF=cuenta;
+    registroCliente c_cliente%ROWTYPE;
+    BEGIN
+        FOR v_cuenta IN c_cuenta LOOP
+            OPEN c_cliente(v_cuenta.NIF_TITULAR);
+                FETCH c_cliente INTO registroCliente;
+                    WHILE(c_cliente%FOUND) LOOP
+                    DBMS_OUTPUT.PUT_LINE('NUMERO DE CUENTA:'||v_cuenta.NUM_CUENTA);
+                    DBMS_OUTPUT.PUT_LINE('NOMBRE DEL CLIENTE:' || registroCliente.NOMBRE);
+                    FETCH c_cliente INTO registroCliente;
+                    END LOOP;
+                CLOSE c_cliente;
+            END LOOP;
+        END;
+BEGIN
+mostrarCliente;
+END;
+
+--EJ3
+

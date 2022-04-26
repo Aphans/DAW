@@ -463,6 +463,6 @@ END;
 
 DECLARE
 BEGIN
-pedir_Revision('null','ANA');
+pedir_Revision(null,'ANA');
 END;
 /

@@ -21,6 +21,7 @@ password que tenga funciones de administrador
 --SOLUCIÓN:
     CREATE USER ADMINISTRADOR IDENTIFIED BY ADMINISTRADOR; --Creación de usuario
     GRANT DBA TO ADMINISTRADOR; --Dar permisos de administrador. Todos los permisos.
+    --DBA = DATABASE ADMINISTRATOR
 
 B)Conectarse con el nombre del usuario creado 
 --SOLUCIÓN:
