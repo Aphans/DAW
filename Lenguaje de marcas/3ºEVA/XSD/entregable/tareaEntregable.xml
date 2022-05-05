@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vehiculo matricula="3321FTS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="tareaEntregable.xsd">
+    <titular>
+       <Nombre>Pepe</Nombre> 
+       <Apellido1>Gonzalez</Apellido1>
+       <Apellido2>Alvarez</Apellido2>
+    </titular>
+    <Telefono>660606066</Telefono>
+    <tipo>coche</tipo>
+    <numeroFicha>4030303030</numeroFicha>
+    <numeroPuertas>1</numeroPuertas>
+    <cilindrada>4.2</cilindrada>
+    <FechaEstimada>02/03/2000</FechaEstimada>
+</vehiculo>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="modulo" type="modulo"/>
+
+    <!--TYPES-->
+  <xs:complexType name="modulo">
+        <xs:sequence>
+            <xs:element name="duracion" type="tipoduracion"/>
+                <xs:element name="nombre" type="xs:string" />
+                    <xs:element name="ciclo" maxOccurs="3">
+                    <xs:complexType>
+                         <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="codigo" use="required" />
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+            </xs:element>
+            <xs:element name="contenidos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="UD" maxOccurs="unbounded" type="tipocontenidos"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="codigo" type="resCodigoModulo" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="tipoduracion">
+            <xs:attribute name="horas" type="resTime" use="required" />
+            <xs:attribute name="sesiones" type="resTime" use="required" />
+            <xs:attribute name="sesionesSemana" type="minTime" use="required" />
+    </xs:complexType>
+
+
+    <xs:complexType name="tipocontenidos">
+        <xs:sequence>
+            <xs:element name="titulo" type="xs:string" />
+            <xs:element name="descripcion" minOccurs="0" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="num" type="xs:integer" use="required" />
+        <xs:attribute name="sesiones" type="xs:integer" use="required" />
+    </xs:complexType>
+
+
+    <!--EXTENSIONS-->
+    <xs:complexType name="eModulo">
+        <xs:complexContent>
+            <xs:extension base="modulo">
+                <xs:sequence>
+                    <xs:element name="nombreProfesor" type="xs:string"/>
+                    <xs:element name="numeroAlumnos" type="xs:integer"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+       </xs:complexType>
+       
+    <!--RESTRINCCIONES-->
+    <xs:simpleType name="resCodigoModulo">
+        <xs:restriction base="xs:string">
+        <xs:pattern value="[MP][0-9]{4}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="resTime">
+        <xs:restriction base="xs:integer">
+        <xs:minExclusive value="0"></xs:minExclusive> 
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="minTime">
+        <xs:restriction base="resTime">
+        <xs:minExclusive value="0"></xs:minExclusive> 
+        <xs:maxExclusive value="21"></xs:maxExclusive>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

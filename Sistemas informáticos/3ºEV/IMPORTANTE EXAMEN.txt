@@ -45,4 +45,15 @@ siwtch macadress capa 2
 --Directorio activo/Dominio, arbol y bosque. 
 --Un controlador de dominio es un servidor server 
 
---Protócolo DHCP
+--Protócolo DHCP y enrutamiento,directorio activo,dns
+
+Si esta al lado de el exterior no se necesita puerta de enlace 
+
+Si esta en el mismo ordenador red interna  
+
+
+si no hace ping a la puerta de enlace es por el firewall, la puerta de enlace del cliente es la ip del servidor, hay que habilitar en firewall archivos e impresoras compartidas en entrada y salida. el dns es la ip del servidor
+
+ARQUITECTURA DE DIRECTORIO ACTIVO NO ENTRA
+
+todos los recursos de una red organizada de forma centralizada es un dominio

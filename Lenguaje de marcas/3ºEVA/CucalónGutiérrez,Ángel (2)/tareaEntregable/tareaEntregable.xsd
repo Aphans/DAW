@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="vehiculo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="titular">
+                    <xs:complexType>
+                        <xs:sequence>
+                        <xs:element name="Nombre" type="tipoNombre"/>
+                        <xs:element name="Apellido1" type="tipoApellido"/>
+                        <xs:element name="Apellido2" type="tipoApellido"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Telefono" type="tipoTelefono"/>
+                <xs:element name="tipo" type="tipoVehiculo"/>
+                <xs:element name="numeroFicha" type="tipoNumeroFicha"/>
+                <xs:element name="numeroPuertas" type="tipoNumeroPuertas"/>
+                <xs:element name="cilindrada" type="tipoCilindrada"/>
+                <xs:element name="FechaEstimada" type="tipoFechaEstimada"/>
+            </xs:sequence>
+            <xs:attribute name="matricula" type="tipoMatricula" use="required" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="tipoVehiculo">
+        <xs:restriction base="xs:string">
+        <xs:enumeration value="coche"/>
+        <xs:enumeration value="moto"/>
+        <xs:enumeration value="autobús"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoMatricula">
+        <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9]{4}+[A-Z-[AEIOU]]{3}"/>
+        </xs:restriction>
+        </xs:simpleType>
+    <xs:simpleType name="tipoNombre">
+        <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Z][a-z]+"></xs:pattern>
+        <xs:maxLength value="20"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoApellido">
+        <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Z][a-z]+"></xs:pattern>
+        <xs:maxLength value="30"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoTelefono">
+        <xs:restriction base="xs:integer">
+        <xs:pattern value="[6][0-9]+"></xs:pattern>
+        <xs:totalDigits value="9"></xs:totalDigits>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoNumeroFicha">
+        <xs:restriction base="xs:integer">
+        <xs:pattern value="[0-9]+"></xs:pattern>
+        <xs:totalDigits value="10"></xs:totalDigits>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoNumeroPuertas">
+        <xs:restriction base="xs:integer">
+        <xs:enumeration value="1"></xs:enumeration>
+        <xs:enumeration value="2"></xs:enumeration>
+        <xs:enumeration value="6"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoCilindrada">
+        <xs:restriction base="xs:decimal">
+        <xs:totalDigits value="4"></xs:totalDigits>
+        <xs:fractionDigits value="1"></xs:fractionDigits>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoFechaEstimada">
+        <xs:restriction base="xs:string">
+        <xs:pattern value="\d{2}[/]\d{2}[/]\d{4}"/>
+        <xs:length value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
