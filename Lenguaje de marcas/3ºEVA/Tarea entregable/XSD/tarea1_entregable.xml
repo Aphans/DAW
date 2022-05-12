@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<musica xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="musica.xsd">
+  <cd titulo="Late at nigth" anho="1999" interprete="SN2000"/>
+  <cd titulo="Punto ... y seguido" anho="2006" interprete="CT9099"/>
+  <cd titulo="Speak now" anho="2010" interprete="BV200"/>
+  <musico codigo="SN2000">
+    <nombreArtistico>Dover</nombreArtistico>
+    <tipo>banda</tipo>
+    <instrumento>bajo</instrumento>
+    <instrumento>guitarra</instrumento>
+    <instrumento>batería</instrumento>
+  </musico>
+  <musico codigo="CT9099">
+    <nombreArtistico>Joaquín Sabina</nombreArtistico>
+    <tipo>cantautor</tipo>
+  </musico>
+  <musico codigo="BV200">
+    <nombreArtistico>Taylor Swift</nombreArtistico>
+    <instrumento>guitarra</instrumento>
+  </musico>
+  <musico codigo="TUS100">
+    <nombreArtistico>Carlos Nuñez</nombreArtistico>
+    <instrumento>flauta de pico</instrumento>
+    <instrumento>gaita</instrumento>
+    <instrumento>ocarina</instrumento>
+  </musico>
+  <cd titulo="La hermandad de las estrellas" interprete="TUS100"/>
+</musica>

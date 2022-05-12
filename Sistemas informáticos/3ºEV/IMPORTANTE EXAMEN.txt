@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------SOLO SE PUEDE CON ROOT---------------------------------------------------------*/
+ /*-----------------------------------------------------------------SOLO SE PUEDE CON ROOT---------------------------------------------------------*/
 
 --Crear usuarios en linux
 useradd //adduser diferencia
@@ -57,3 +57,14 @@ si no hace ping a la puerta de enlace es por el firewall, la puerta de enlace de
 ARQUITECTURA DE DIRECTORIO ACTIVO NO ENTRA
 
 todos los recursos de una red organizada de forma centralizada es un dominio
+
+
+dar dominio al usuario
+
+
+Crear unidad organizativa en usuarios y equipos de active directory
+
+configurar reenviador del DNS
+
+agregar reenviadores, enrutamiento,crear ambito
+

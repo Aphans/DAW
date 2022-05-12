@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="musica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="cd" maxOccurs="unbounded" type="tipo_cd"/>
+        <xs:element name="musico" maxOccurs="unbounded" type="r_musico">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombreArtistico" type="xs:string" />
+              <xs:element name="tipo" minOccurs="0" type="xs:string" />
+              <xs:element name="instrumento" minOccurs="1" maxOccurs="4" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="codigo" use="required" type="r_codigo" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="cd" maxOccurs="unbounded" type="tipo_cd"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Tipos, para evitar duplicidad de código-->
+  <xs:complexType name="tipo_cd">
+      <xs:attribute name="titulo" use="required"/>
+      <xs:attribute name="anho" type="r_anho"/>
+      <xs:attribute name="interprete" use="required" />
+   </xs:complexType>
+   <!--Restricciones-->
+   <xs:simpleType name="r_anho"><!--Preguntar-->
+      <xs:restriction base="xs:integer">
+          <xs:pattern value="/^(1[9][0-9][0-9]|200[0-2]|2002)$/"></xs:pattern>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="r_codigo">
+      <xs:restriction base="xs:string">
+          <xs:pattern value="/[A-Za-z]]{2}[0-9]|[A-Za-z][0-9]{2}"></xs:pattern>
+          <xs:minLength value="5"></xs:minLength>
+          <xs:maxLength value="6"></xs:maxLength>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="r_atributo">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="/[A-Za-z]]{2}[0-9]|[A-Za-z][0-9]{2}"></xs:pattern>
+        <xs:minLength value="5"></xs:minLength>
+        <xs:maxLength value="6"></xs:maxLength>
+    </xs:restriction>
+   </xs:simpleType>
+    <xs:simpleType name="r_musico">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="cantautor"/>
+            <xs:enumeration value="duo"/>
+            <xs:enumeration value="solista"/>
+            <xs:enumeration value="grupo"/>
+            <xs:enumeration value="banda"/>
+       </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

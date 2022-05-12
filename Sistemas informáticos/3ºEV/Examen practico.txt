@@ -1,6 +1,6 @@
 -Tarjetas red
 -DHCP
 -Enrutamiento 
--AD (Dominio promoción)
+-AD (Dominio promoción)- Directorio activo
 -DNS
 -Agregar cliente pc al dominio
